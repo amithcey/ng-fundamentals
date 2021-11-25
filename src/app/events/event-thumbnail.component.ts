@@ -12,8 +12,7 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
             <span>Location: {{event.location.address}}</span>
             <span>&nbsp;</span>
             <span>{{event.location.city}}, {{event.location.country}}</span>
-        </div>
-        <button class="btn btn-primary" (click)="handleChildClick()">Emitter</button>
+        </div>        
     </div>
     `
 })
@@ -22,7 +21,9 @@ export class EventThumbnailComponent {
     @Input() event: any;
     @Output() eventClicked = new EventEmitter();
 
-    handleChildClick() {
-        this.eventClicked.emit(this.event.name);
+    name = 'Child Thumbnail';
+
+    templateVariableLogger() {
+        console.log('Parent called child using template variable')
     }
 }

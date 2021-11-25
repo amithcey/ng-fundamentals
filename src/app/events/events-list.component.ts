@@ -7,9 +7,11 @@ import { Component } from "@angular/core";
         <h1>Upcoming Angular Events</h1>
         <hr />
         <event-thumbnail 
-            [event]="event1"
-            (eventClicked)="handleParentAction($event)">
+            #thumbnail
+            [event]="event1">
         </event-thumbnail>
+        <h3>{{thumbnail.name}}</h3>
+        <button class="btn btn-primary" (click)="thumbnail.templateVariableLogger()">Template var</button>
     </div>  
     `
 })
@@ -27,9 +29,5 @@ export class EventsListComponent {
             city: 'London',
             country: 'England'
         }
-    }
-
-    handleParentAction(eventName) {
-        console.log('Passing event name back to parent: ', eventName);
     }
 }
