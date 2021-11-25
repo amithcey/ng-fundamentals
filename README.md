@@ -1,6 +1,7 @@
 # NgFundamentals
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
+This is a plural sight course given by Jim Cooper and Joe Eames.
 
 ## Development server
 
