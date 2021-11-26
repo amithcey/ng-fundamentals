@@ -17,6 +17,8 @@ import { Router } from "@angular/router";
 })
 
 export class CreateEventComponent {
+    isDirty: boolean = false; // if true will restrict user to go back, ask a confirmation etc
+
     constructor(private router: Router) { }
 
     cancel() {
