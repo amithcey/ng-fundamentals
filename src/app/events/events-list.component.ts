@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ToastrService } from "../common/toastr.service";
+import { IEvent } from "./shared/event.model";
 import { EventService } from "./shared/events.service";
 
 @Component({
@@ -21,13 +22,15 @@ import { EventService } from "./shared/events.service";
 
 export class EventsListComponent implements OnInit {
 
-    events: any;
+    events: IEvent[];
 
     constructor(private eventService: EventService,
         private toastrService: ToastrService) { }
 
     ngOnInit() {
-        this.events = this.eventService.getEvents();
+        this.eventService.getEvents().subscribe((data) => {
+            this.events = data;
+        });
     }
 
     handleThumbnailClick(name) {
