@@ -3,16 +3,19 @@
     <hr>
     <div class="col-md-4">
       <form autocomplete="off" novalidate [formGroup]="profileForm" (ngSubmit)="saveProfile(profileForm.value)">
-        <div class="form-group">
+        <div class="form-group" [ngClass]="{'error': !validatefirstname()}">
+          <em *ngIf="!validatefirstname() && profileForm.controls.firstname.errors.required">Required</em>
+          <em *ngIf="!validatefirstname() && profileForm.controls.firstname.errors.pattern">Must start with a letter</em>
           <label for="firstName">First Name:</label>
           <input formControlName="firstname" id="firstName" type="text" class="form-control" placeholder="First Name..." />
         </div>
-        <div class="form-group">
+        <div class="form-group" [ngClass]="{'error': !validatelastname()}">
+          <em *ngIf="!validatelastname()">Required</em>
           <label for="lastName">Last Name:</label>
           <input formControlName="lastname" id="lastName" type="text" class="form-control" placeholder="Last Name..." />
         </div>
   
-        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="submit" [disabled]="profileForm.invalid" class="btn btn-primary">Save</button>
         <button type="button" class="btn btn-default" (click)="cancel()">Cancel</button>
       </form>
     </div>
