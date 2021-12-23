@@ -17,13 +17,6 @@ export class CreateEventComponent {
     constructor(private router: Router,
         private eventService: EventService) { }
 
-    ngOnInit() {
-        this.newEvent = {
-            'name': 'Already existing Event',
-            'price': 999.9
-        }
-    }
-
     saveEvent(formValues) {
         this.eventService.saveEvent(formValues);
         this.router.navigate(['/events']);
