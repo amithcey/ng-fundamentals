@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { ToastrService } from './common/toastr.service';
 import { CreateEventComponent } from './events/create-event.component';
+import { CreateSessionComponent } from './events/event-details/create-session.component';
 import { EventDetailsComponent } from './events/event-details/event-details.component';
 import { EventRouteActivator } from './events/event-details/event-route-activator.service';
 import { EventThumbnailComponent } from './events/event-thumbnail.component';
@@ -28,7 +29,8 @@ import { AuthService } from './user/auth.service';
     EventThumbnailComponent,
     EventDetailsComponent,
     CreateEventComponent,
-    NavBarComponent    
+    NavBarComponent,
+    CreateSessionComponent 
   ],
   providers: [
     EventService,
