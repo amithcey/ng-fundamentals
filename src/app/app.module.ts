@@ -9,6 +9,7 @@ import { CreateEventComponent } from './events/create-event.component';
 import { CreateSessionComponent } from './events/event-details/create-session.component';
 import { EventDetailsComponent } from './events/event-details/event-details.component';
 import { EventRouteActivator } from './events/event-details/event-route-activator.service';
+import { SessionListComponent } from './events/event-details/session-list.component';
 import { EventThumbnailComponent } from './events/event-thumbnail.component';
 import { EventsListComponent } from './events/events-list.component';
 import { EventService } from './events/shared/events.service';
@@ -30,7 +31,8 @@ import { AuthService } from './user/auth.service';
     EventDetailsComponent,
     CreateEventComponent,
     NavBarComponent,
-    CreateSessionComponent 
+    CreateSessionComponent,
+    SessionListComponent
   ],
   providers: [
     EventService,
