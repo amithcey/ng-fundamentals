@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { CollapsibleWellComponent } from './common/collapsible-well.component';
 import { ToastrService } from './common/toastr.service';
 import { CreateEventComponent } from './events/create-event.component';
 import { CreateSessionComponent } from './events/event-details/create-session.component';
@@ -32,7 +33,8 @@ import { AuthService } from './user/auth.service';
     CreateEventComponent,
     NavBarComponent,
     CreateSessionComponent,
-    SessionListComponent
+    SessionListComponent,
+    CollapsibleWellComponent
   ],
   providers: [
     EventService,
