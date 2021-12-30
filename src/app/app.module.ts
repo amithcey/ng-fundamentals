@@ -13,6 +13,7 @@ import { EventRouteActivator } from './events/event-details/event-route-activato
 import { SessionListComponent } from './events/event-details/session-list.component';
 import { EventThumbnailComponent } from './events/event-thumbnail.component';
 import { EventsListComponent } from './events/events-list.component';
+import { DurationPipe } from './events/shared/duration.pipe';
 import { EventService } from './events/shared/events.service';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { appRoutes } from './routes';
@@ -34,7 +35,8 @@ import { AuthService } from './user/auth.service';
     NavBarComponent,
     CreateSessionComponent,
     SessionListComponent,
-    CollapsibleWellComponent
+    CollapsibleWellComponent,
+    DurationPipe
   ],
   providers: [
     EventService,
