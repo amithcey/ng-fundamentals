@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { Toastr, TOASTR_TOKEN, JQ_TOKEN, CollapsibleWellComponent, SimpleModalComponent } from './common/index';
+import { Toastr, TOASTR_TOKEN, JQ_TOKEN, CollapsibleWellComponent, SimpleModalComponent, ModalTriggerDirective } from './common/index';
 import { CreateEventComponent } from './events/create-event.component';
 import { CreateSessionComponent } from './events/event-details/create-session.component';
 import { EventDetailsComponent } from './events/event-details/event-details.component';
@@ -40,7 +40,8 @@ let jQuery = window['$'];
     SessionListComponent,
     CollapsibleWellComponent,
     DurationPipe,
-    SimpleModalComponent
+    SimpleModalComponent,
+    ModalTriggerDirective
   ],
   providers: [
     EventService,
