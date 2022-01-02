@@ -4,8 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { CollapsibleWellComponent } from './common/collapsible-well.component';
-import { Toastr, TOASTR_TOKEN } from './common/toastr.service';
+import { Toastr, TOASTR_TOKEN, JQ_TOKEN, CollapsibleWellComponent, SimpleModalComponent } from './common/index';
 import { CreateEventComponent } from './events/create-event.component';
 import { CreateSessionComponent } from './events/event-details/create-session.component';
 import { EventDetailsComponent } from './events/event-details/event-details.component';
@@ -21,6 +20,7 @@ import { AuthService } from './user/auth.service';
 
 let toastr: Toastr = window['toastr'];
 //declare let toastr: Toastr;
+let jQuery = window['$'];
 
 @NgModule({
   imports: [
@@ -39,11 +39,13 @@ let toastr: Toastr = window['toastr'];
     CreateSessionComponent,
     SessionListComponent,
     CollapsibleWellComponent,
-    DurationPipe
+    DurationPipe,
+    SimpleModalComponent
   ],
   providers: [
     EventService,
     { provide: TOASTR_TOKEN, useValue: toastr },
+    { provide: JQ_TOKEN, useValue: jQuery },
     EventRouteActivator,
     AuthService,
     {
